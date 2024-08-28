@@ -17,13 +17,16 @@ class UserListTest {
         userList.addUser("Jay", "333");
 
         // TODO: find one of them
-        User actual = userList.findUserByUsername("Mek");
+        User user = userList.findUserByUsername("Mek");
+
 
         // TODO: assert that UserList found User
         // String expected = "<one of username>";
         // String actual = user.getUsername();
+        String expected = "Mek";
+        String actual = user.getUsername();
         // assertEquals(expected, actual);
-        assertEquals("Mek", actual.getUsername());
+        assertEquals(expected, actual);
     }
 
     @Test
@@ -52,9 +55,10 @@ class UserListTest {
         userList.addUser("Jay", "333");
         // TODO: call login() with correct username and password
         User actual = userList.login("Mek", "111");
+        User expected = userList.findUserByUsername("Mek");
         // TODO: assert that User object is found
         // assertEquals(expected, actual);
-        assertEquals(userList.findUserByUsername("Mek"), actual);
+        assertEquals(expected, actual);
     }
 
     @Test

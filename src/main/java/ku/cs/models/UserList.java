@@ -35,9 +35,6 @@ public class UserList {
                 exist.setPassword(newPassword);
                 return true;
             }
-            else {
-                return false;
-            }
         }
         return false;
     }
@@ -49,9 +46,6 @@ public class UserList {
         if (exist != null) {
             if (exist.validatePassword(password) && exist.getUsername().equals(username)) {
                 return exist;
-            }
-            else {
-                return null;
             }
         }
         return null;
